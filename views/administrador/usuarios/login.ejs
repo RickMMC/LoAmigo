@@ -1,0 +1,33 @@
+<%- include("../../templates/encabezado")%>
+
+<body style="background-image: url('../images/utsjr1.jpg'); background-size: cover; background-position: center; min-height: 100vh; margin: 0; display: flex; align-items: center; justify-content: center;"></body>
+
+<div class="container mt-5">
+    <form action="/login" method="post" class="row justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card shadow">
+                    <div class="card-header text-white" style="background: #002855;">
+                        <h1 class="text-center mb-0"><strong>Iniciar Sesión</strong></h1>
+                    </div>
+                    <div class="card-body text-center" style="background-color: #00a778;">
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label"><strong>Usuario</strong></label>
+                            <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Ingresa tu usuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label"><strong>Contraseña</strong></label>
+                            <input class="form-control" type="password" name="password" id="password" placeholder="Ingresa tu contraseña" required>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
+                        <div class="text-center mt-3">
+                            <a class="btn btn-danger" href="/registro">Registrarse</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%- include("../../templates/pie")%>

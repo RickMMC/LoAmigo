@@ -1,0 +1,45 @@
+<%- include("../templates/encabezado")%>
+<%- include("../templates/menu")%>
+
+<body style="background-image: url('https://www.eduopinions.com/wp-content/uploads/2017/10/Universidad-Tecnol%C3%B3gica-de-San-Juan-del-R%C3%ADo-UTSJR-campus.jpg'); background-size: cover;background-repeat: no-repeat; background-attachment: fixed;"></body>
+
+<div class="container mt-5">
+    <form action="/nuevosnegocios/<%=user.id%>" method="post" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header text-white" style="background-color: #00a778;">
+                <h1 class="text-center">Nuevo Negocio</h1>
+            </div>
+            <div class="card-body" style="background-color: #002855; color: #fff;">
+                <input type="hidden" name="idUsuario" value="<%= user.id%>">
+
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre del Negocio</label>
+                    <input class="form-control" type="text" name="nombre" id="nombre" placeholder="negocios" autofocus required>
+                    <div class="invalid-feedback">Por favor, ingresa el nombre del negocio.</div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Descripción</label>
+                    <textarea class="form-control" name="desc" id="desc" placeholder="Descripcion" rows="3" required></textarea>
+                    <div class="invalid-feedback">Por favor, ingresa la descripción del negocio.</div>
+                </div>
+
+            
+
+
+
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Foto del Negocio</label>
+                    <input class="form-control" type="file" name="foto" id="foto" required>
+                    <div class="invalid-feedback">Por favor, selecciona una foto para el negocio.</div>
+                </div>
+                <button class="btn btn-primary me-2" type="submit">Guardar </button>
+                <button class="btn btn-secondary" type="reset">borrar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<%- include("../templates/pie")%>

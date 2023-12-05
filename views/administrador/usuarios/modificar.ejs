@@ -1,0 +1,44 @@
+<%- include("../../templates/encabezado") %>
+<%- include("../../templates/menuadmin") %>
+<div class="container" mt-5>
+    <form action="/editarUsuario" method="post" enctype="multipart/form-data">
+        <div class="card mt-5">
+            <div class="card-header">
+                <h1>Editar Usuario</h1>
+            </div>
+            <div class="card-body">
+                <input type="hidden" name="id" id="id" value="<%= user.id %>">
+                <input type="hidden" name="fotoAnterior" id="fotoAnterior" value="<%= user.foto %>">
+                <input type="hidden" name="admin" id="admin" value="">
+                <input class="form-control mb-3" type="text" value="<%= user.nombre %>" name="nombre" id="nombre" placeholder="Nombre" autofocus>
+                <input class="form-control mb-3" type="text" value="<%= user.usuario %>" name="usuario" id="usuario" placeholder="Usuario">
+
+                <label for="opciones">Selecciona tu Cuatrimestre:</label>
+                <select class="form-control2" id="cuatri" name="cuatri">
+                    <option value="Cuatrimestre 1">Cuatrimestre 1</option>
+                    <option value="Cuatrimestre 2">Cuatrimestre 2</option>
+                    <option value="Cuatrimestre 3">Cuatrimestre 3</option>
+                    <option value="Cuatrimestre 4">Cuatrimestre 4</option>
+                    <option value="Cuatrimestre 5">Cuatrimestre 5</option>
+                    <option value="Cuatrimestre 6">Cuatrimestre 6</option>
+                </select>
+                <label for="opciones">Selecciona tu Carrera:</label>
+                <select class="form-control2" id="carrera" name="carrera">
+                    <option value="Desarrollo de software multiplataforma ">Desarrollo de software multiplataforma</option>
+                    <option value="Mecatronica">Mecatronica</option>
+                    <option value="Ingeniera civil">Ingeniera civil</option>
+                </select>
+                <input class="form-control mb-3" type="hidden" value=""name="password" id="password" placeholder="Password">
+                <div class="form-control mb-3">
+                    <img src="/Usuarios/images/<%= user.foto %>" alt="" width="100px">
+                    <div><%=user.foto%></div>
+                </div>
+                <input class="form-control mb-3"type="file" name="foto" id="foto">
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary mb-3" type="submit">Editar Usuario</button>
+                <button class="btn btn-secundary mb-3" type="reset">Limpiar campos</button>
+            </div>
+    </form>
+</div>
+<%- include("../../templates/pie") %>

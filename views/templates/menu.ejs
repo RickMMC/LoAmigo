@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #002855;">
+  <div class="container-fluid" style="background-color: #002855;">
+    <a class="navbar-brand" style="color: #fff;" href="/inicio/<%=user.id%>">UTSJR</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+      <li>
+        <a class="navbar-brand" style="color: #fff;" href="/perfil/<%=user.id%>">
+          <img src="/Usuarios/images/<%= user.foto %>" width="35" height="35" class="rounded-circle d-inline-block align-top me-1" alt="">
+          <%=user.usuario%>
+        </a>
+      </li>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" style="color: #fff;" href="/inicio/<%=user.id%>">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: #fff;" href="/explorar/<%=user.id%>">mostar loboNegocios</a>
+        </li>
+      <form class="d-flex">
+        <li>
+        <a class="nav-link me-2" style="color: #fff;" href="/nuevosnegocios/<%=user.id%>">agregar nuevo loboNegocio</a>
+      </li>
+      <li>
+        <a class="nav-link me-2" style="color: #fff;" href="/perfilnegocio/<%=user.id%>">mis lobo negocios</a>
+      </li>
+  
+        <a class="nav-link" style="color: #fff;" href="/logout">Cerrar Sesión</a>
+      </ul>
+      </form>
+    </div>
+  </div>
+</nav>
+

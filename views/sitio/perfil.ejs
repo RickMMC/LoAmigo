@@ -1,0 +1,58 @@
+<%- include("../templates/encabezado") %>
+<%- include("../templates/menu") %>
+
+<body style="background-image: url('https://th.bing.com/th/id/OIP.aRjW-vkQs-LLmo0p0CqX0QHaCy?rs=1&pid=ImgDetMain'); background-size: cover; background-position: center; overflow-y: auto;"></body>
+
+<div class="container mt-5 d-flex justify-content-center align-items-center">
+    <form action="/perfil" method="post" enctype="multipart/form-data">
+        <div class="card" style="max-width: 700px; border-radius: 15px; overflow: hidden;">
+            <div class="card-header text-center" style="background-color: #00a778;">
+                <h1 class="display-4">Perfil</h1>
+            </div>
+            <div class="card-body" style="background-color: #002855; color: #fff;">
+                <div class="mb-4 text-center">
+                    <img src="/Usuarios/images/<%= user.foto %>" alt="Foto de perfil" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #fff;">
+                </div>
+                <div class="card-body2">
+                    <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre" autofocus>
+                    <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Usuario">
+                   
+                    <label for="opciones">Selecciona tu Cuatrimestre:</label>
+                    <select class="form-control2" id="cuatri" name="cuatri">
+                        <option value="Cuatrimestre 1">Cuatrimestre 1</option>
+                        <option value="Cuatrimestre 2">Cuatrimestre 2</option>
+                        <option value="Cuatrimestre 3">Cuatrimestre 3</option>
+                        <option value="Cuatrimestre 4">Cuatrimestre 4</option>
+                        <option value="Cuatrimestre 5">Cuatrimestre 5</option>
+                        <option value="Cuatrimestre 6">Cuatrimestre 6</option>
+                    </select>
+                    <label for="opciones">Selecciona tu Carrera:</label>
+                    <select class="form-control2" id="carrera" name="carrera">
+                        <option value="Desarrollo de software multiplataforma ">Desarrollo de software multiplataforma</option>
+                        <option value="Mecatronica">Mecatronica</option>
+                        <option value="Ingeniera civil">Ingeniera civil</option>
+                    </select>
+                   
+                </div>
+
+  
+               
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Cambiar Foto:</label>
+                    <input class="form-control" type="file" name="foto" id="foto">
+                    <small class="form-text">Selecciona una nueva imagen de perfil</small>
+                </div>
+
+                <input class="form-control mb-3" type="hidden" value="" name="password" id="password" placeholder="Password">
+
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary mb-3 me-2">Editar Usuario</button>
+                    <button class="btn btn-danger mb-3" type="reset">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%- include("../templates/pie") %>
+
